@@ -42,25 +42,6 @@ This project demonstrates **real-world backend development practices** such as J
 - 📘 Swagger API documentation
 - 🔒 Secure configuration using environment variables
 
----
-
-## 📂 Project Structure
-
-src/main/java/com/rutika/job_application_tracker
-├── controller # REST controllers
-├── service # Business logic
-├── repository # JPA repositories
-├── entity # Database entities
-├── dto # Request / Response DTOs
-├── security # JWT & security config
-├── exception # Custom exceptions & handler
-└── config # Application configuration
-
-yaml
-Copy code
-
----
-
 ## 🔐 Authentication Flow (JWT)
 
 1. User registers using `/auth/signup`
@@ -68,12 +49,6 @@ Copy code
 3. Backend returns a **JWT token**
 4. Client sends token with every request:
 Authorization: Bearer <JWT_TOKEN>
-
-yaml
-Copy code
-5. Access is granted based on user role
-
----
 
 ## 📘 API Documentation (Swagger)
 
@@ -114,8 +89,7 @@ cd Job_Application_Tracker
 2️⃣ Set environment variables
 Using terminal:
 
-bash
-Copy code
+
 export DB_URL=jdbc:mysql://localhost:3306/Job_Application_Db
 export DB_USER=root
 export DB_PASS=your_password
@@ -123,29 +97,26 @@ export JWT_SECRET=your_secret_key
 Or using IDE Run Configuration.
 
 3️⃣ Run the application
-bash
-Copy code
+
 mvn spring-boot:run
 🧪 Sample API Usage
 🔹 User Signup
-bash
-Copy code
+
 POST /auth/signup
 json
-Copy code
+
 {
   "email": "user@gmail.com",
   "password": "password123",
   "role": "USER"
 }
 🔹 User Login
-bash
-Copy code
+
 POST /auth/login
 Response:
 
 json
-Copy code
+
 {
   "token": "eyJhbGciOiJIUzI1NiIs..."
 }
@@ -155,7 +126,6 @@ All exceptions are handled centrally using @RestControllerAdvice.
 Example error response:
 
 json
-Copy code
 {
   "message": "User not found",
   "status": 404,
