@@ -1,0 +1,18 @@
+# Environment variables
+.env
+
+# Build output
+target/
+
+# OS files
+.DS_Store
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code (optional)
+.vscode/
+
+# Logs
+*.log
